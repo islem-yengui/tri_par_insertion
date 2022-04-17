@@ -1,0 +1,27 @@
+ALGORITHM Tri-Insertion
+VAR
+   x, i, j, n : INTEGER
+   Tab: ARRAY_OF Integer[n];
+
+BEGIN
+    write("give n")
+    read(n)
+
+    FOR i FROM 0 TO n STEP1 DO
+       write("give element")
+       write(Tab[i])
+    END_FOR
+
+    FOR i FROM 1 TO n STEP 1 DO
+       x := Tab[i]
+       j := i 
+       WHILE (Tab[j-1] > x and j>0) DO
+          Tab[j] := Tab[j-1]
+           j := j − 1
+       END_WHILE  
+      Tab[j] := x
+    END_FOR
+
+END  
+
+
